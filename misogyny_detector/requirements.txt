@@ -1,0 +1,27 @@
+# Core
+Flask==2.3.3
+Flask-SQLAlchemy==3.1.1
+pymysql==1.1.0        # 升級到最新版
+gunicorn==21.2.0
+Werkzeug==3.0.1  # 相容 Flask 2.3.x
+
+# Data Processing
+tensorflow-cpu==2.15.0
+torch==2.2.2
+numpy==1.26.4         # 明確添加（TensorFlow/PyTorch 依賴但未列出）
+
+# Web Scraping
+beautifulsoup4==4.12.3
+parsel==1.8.1         # 升級到最新版
+playwright==1.42.0
+
+# AWS
+boto3==1.34.24        # 升級到最新版
+jmespath==1.0.1
+
+# Utilities
+requests==2.31.0
+cssselect==1.2.0      # 升級到最新版
+nested-lookup==0.2.25
+
+

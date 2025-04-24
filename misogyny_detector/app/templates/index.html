@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Threads 厭女偵測</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background-color: #f5f5f5;
+            margin: 40px;
+            padding: 0;
+        }
+        .container {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            padding: 10px 18px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            background: #f0f0f0;
+            padding: 10px;
+            border-left: 4px solid #e74c3c;
+            border-radius: 4px;
+        }
+        .stat {
+            margin: 15px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #337ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if stats %}
+            <h2>帳號：{{ username }}</h2>
+            <div class="stat">📄 總貼文數：<strong>{{ stats.total_posts }}</strong></div>
+            <div class="stat">🚫 厭女貼文數：<strong>{{ stats.misogynistic_posts }}</strong></div>
+
+            <h3>⚠️ 厭女貼文列表：</h3>
+            <ul>
+                {% for post in posts %}
+                    <li>{{ post.text }}</li>  <!-- 修改為 post.text -->
+                {% else %}
+                    <li>沒有被判斷為厭女的貼文 🎉</li>
+                {% endfor %}
+            </ul>
+            <br>
+            <a href="/">🔙 回到首頁</a>
+        {% else %}
+            <h1>Threads 厭女偵測系統</h1>
+            <form method="POST">
+                <label for="username">輸入 Threads 帳號：</label><br><br>
+                <input type="text" name="username" id="username" placeholder="例如：example_user" required>
+                <button type="submit">開始分析</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
