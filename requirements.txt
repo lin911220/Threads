@@ -1,0 +1,25 @@
+# Core
+Flask==2.3.3
+Flask-SQLAlchemy==3.1.1
+pymysql==1.1.0        
+gunicorn==21.2.0
+Werkzeug==3.0.1  
+
+# Data Processing
+tensorflow-cpu==2.15.0
+torch==2.2.2
+numpy==1.26.4       
+
+# Web Scraping
+beautifulsoup4==4.12.3
+parsel==1.8.1        
+playwright==1.42.0
+
+# AWS
+boto3==1.34.24        
+jmespath==1.0.1
+
+# Utilities
+requests==2.31.0
+cssselect==1.2.0      
+nested-lookup==0.2.25
